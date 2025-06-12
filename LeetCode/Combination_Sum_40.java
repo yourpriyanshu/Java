@@ -1,24 +1,36 @@
-class Solution {
-  public void findCombinations(int[] candidates, int target, int index, List<List<Integer>> result, List<Integer> ds) {
-    if (index >= candidates.length) {
-      if (target == 0) {
-        Collections.sort(ds);
-        result.add(new ArrayList<>(ds));
-      }
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Arrays;
+
+public class Combination_Sum_40 {
+  public static void findCombinations(int[] candidates, int target, int index, List<List<Integer>> result,
+      List<Integer> ds) {
+    if (target == 0) {
+      result.add(new ArrayList<>(ds));
       return;
     }
-    if (candidates[index] <= target) {
-      ds.add(candidates[index]);
-      findCombinations(candidates, target - candidates[index], index + 1, result, ds);
-      ds.remove(ds.size() - 1);
+    for (int i = index; i < candidates.length; i++) {
+      if (i > index && candidates[i] == candidates[i - 1])
+        continue; // skip duplicates
+      if (candidates[i] > target)
+        break; // no need to continue if the candidate exceeds the target
+      ds.add(candidates[i]);
+      findCombinations(candidates, target - candidates[i], i + 1, result, ds);
+      ds.remove(ds.size() - 1); // backtrack
     }
-    findCombinations(candidates, target, index + 1, result, ds);
   }
 
-  public List<List<Integer>> combinationSum2(int[] candidates, int target) {
-    Arrays.sort(candidates);
+  public static List<List<Integer>> CombinationSum2(int[] candidates, int target) {
     List<List<Integer>> result = new ArrayList<>();
     findCombinations(candidates, target, 0, result, new ArrayList<>());
     return result;
+  }
+
+  public static void main(String[] args) {
+    int[] candidates = { 10, 1, 2, 7, 6, 1, 5 };
+    Arrays.sort(candidates);
+    int target = 8;
+    List<List<Integer>> result = CombinationSum2(candidates, target);
+    System.out.println("Combinations that sum to " + target + ":" + " " + result);
   }
 }
