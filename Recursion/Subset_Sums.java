@@ -14,8 +14,8 @@ public class Subset_Sums {
   }
 
   public static void main(String[] args) {
-    int N = 2;
-    int[] arr = { 2, 3 };
+    int N = 3;
+    int[] arr = { 5, 2, 1 };
     ArrayList<Integer> ans = new ArrayList<>();
     int index = 0;
     int sum = 0;
