@@ -20,7 +20,7 @@ public class Subsets_90 {
     List<List<Integer>> result = new ArrayList<>();
     int index = 0;
     List<Integer> ds = new ArrayList<>();
-    findSubsets(nums, 0, result, ds);
+    findSubsets(nums, index, result, ds);
     return result;
   }
 
@@ -30,3 +30,6 @@ public class Subsets_90 {
     System.out.println("Subsets with duplicates: " + result);
   }
 }
+// TC - 2^n x n
+// SC - O(n) x O(k)
+// oxillary SC - O(n)
