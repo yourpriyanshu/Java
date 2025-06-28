@@ -1,3 +1,4 @@
+//experimenting
 public class Queen_capture_3001 {
 
   public static int minMovesToCaptureQueen(int a, int b, int c, int d, int e, int f) {
@@ -79,7 +80,7 @@ public class Queen_capture_3001 {
   }
 
   public static void main(String[] args) {
-    System.out.println(minMovesToCaptureQueen(1, 1, 8, 8, 2, 3)); // Output: 2
-    System.out.println(minMovesToCaptureQueen(5, 3, 3, 4, 5, 2)); // Output: 1
+    // System.out.println(minMovesToCaptureQueen(1, 1, 8, 8, 2, 3)); // Output: 2
+    // System.out.println(minMovesToCaptureQueen(5, 3, 3, 4, 5, 2)); // Output: 1
   }
 }
