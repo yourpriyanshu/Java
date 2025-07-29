@@ -69,7 +69,6 @@ public class Q2 {
         secondMinPrice = arr[i].getPrice();
       }
     }
-    int secondMinPriceIndex = -1;
     for (int i = 0; i < arr.length; i++) {
       if (arr[i].getPrice() == secondMinPrice) {
         return arr[i];
@@ -104,5 +103,6 @@ public class Q2 {
     } else {
       System.out.println("No Headsets available");
     }
+    sc.close();
   }
 }
